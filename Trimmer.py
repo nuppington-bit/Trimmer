@@ -17,11 +17,10 @@ for x in next(os.walk(mainFol))[1]: #loop through folders
 
     if(toggleNames == 0): #create shortcut at shortcut folder named after folder / exe file
         print(x + "   done")
-        shortcut = shell.CreateShortCut(dirFol+"\\"+y+".lnk") 
+        shortcut = shell.CreateShortCut(dirFol+"\\"+biggestY+".lnk") 
     else:
         print(biggestY + " done")
         shortcut = shell.CreateShortCut(dirFol+"\\"+biggestY+".lnk")
 
     shortcut.Targetpath = mainFol+"\\"+x+"\\"+biggestY #select largest file and confirm
     shortcut.save()
-
